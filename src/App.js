@@ -1,14 +1,13 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import CurrencyConverter from "./Components/CurrencyConverter";
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <CurrencyConverter />
+    </div>
+  );
+};
 
 export default App;
