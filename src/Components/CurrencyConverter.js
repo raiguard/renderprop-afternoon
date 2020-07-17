@@ -41,7 +41,7 @@ export default (props) => {
           -
         </button>
       </div>
-      {/* {props.render(currencyData[selectedCurrency], amount)} */}
+      {currencyChosen ? props.render(currencyData[selectedCurrency], amount) : <p>Please select currency</p>}
     </div>
   );
 };
