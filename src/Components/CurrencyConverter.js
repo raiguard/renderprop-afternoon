@@ -1,3 +1,6 @@
+// I decided to do this entire project using hooks with functional components, so I can get practice with them before the personal project.
+// So I didn't follow the instructions exactly, but rather adapted them to functional component syntax.
+
 import React, { useState } from "react";
 
 export default (props) => {
@@ -15,7 +18,14 @@ export default (props) => {
 
   return (
     <div>
-      <select value={selectedCurrency}>
+      <select
+        value={selectedCurrency}
+        onChange={(e) => {
+          const value = e.target.value;
+          setSelectedCurrency(value);
+          setCurrencyChosen(value === "Select currency" ? false : true);
+        }}
+      >
         <option value="Select currency">Select currency</option>
         {currencyData.map((entry, i) => (
           <option key={entry.id} value={i}>
@@ -24,10 +34,14 @@ export default (props) => {
         ))}
       </select>
       <div>
-        <button className="add">+</button>
-        <button className="minus">-</button>
+        <button className="add" onClick={() => setAmount(++amount)}>
+          +
+        </button>
+        <button className="minus" onClick={() => setAmount(--amount)}>
+          -
+        </button>
       </div>
-      {props.render(currencyData[selectedCurrency], amount)}
+      {/* {props.render(currencyData[selectedCurrency], amount)} */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import CurrencyConverter from "./Components/CurrencyConverter";
 const App = () => {
   return (
     <div>
-      <CurrencyConverter />
+      <CurrencyConverter render={() => {}} />
     </div>
   );
 };
