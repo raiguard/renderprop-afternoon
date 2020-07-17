@@ -34,10 +34,10 @@ export default (props) => {
         ))}
       </select>
       <div>
-        <button className="add" onClick={() => setAmount(++amount)}>
+        <button className="add" onClick={() => setAmount(++amount)} disabled={!currencyChosen}>
           +
         </button>
-        <button className="minus" onClick={() => setAmount(amount > 0 ? --amount : 0)}>
+        <button className="minus" onClick={() => setAmount(amount > 0 ? --amount : 0)} disabled={!currencyChosen}>
           -
         </button>
       </div>
