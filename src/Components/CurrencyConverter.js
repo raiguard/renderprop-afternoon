@@ -37,7 +37,7 @@ export default (props) => {
         <button className="add" onClick={() => setAmount(++amount)}>
           +
         </button>
-        <button className="minus" onClick={() => setAmount(--amount)}>
+        <button className="minus" onClick={() => setAmount(amount > 0 ? --amount : 0)}>
           -
         </button>
       </div>
